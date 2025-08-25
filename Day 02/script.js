@@ -1,7 +1,19 @@
 function findHighest() {
+    let userInput = document.getElementById("userInput").value;
     
-    let marks = [85, 92, 76, 98, 89, 91];
-    let highest = Math.max(...marks);
-    document.getElementById("result").innerText = 
-        "The highest marks are: " + highest;
+    if (userInput.trim() === "") {
+        document.getElementById("output").innerText = "⚠️ Please enter some numbers!";
+        return;
+    }
+
+    let numbers = userInput.split(",").map(x => parseInt(x.trim())).filter(n => !isNaN(n));
+
+    if (numbers.length === 0) {
+        document.getElementById("output").innerText = "⚠️ Invalid input!";
+        return;
+    }
+
+    let maxValue = Math.max(...numbers);
+
+    document.getElementById("output").innerText = "🏆 The highest value is: " + maxValue;
 }

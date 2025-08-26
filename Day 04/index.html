@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 4 - Node.js</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="box">
+    <h1>Day 04 - Node.js</h1>
+    <button onclick="getMsg()">API returning</button>
+    <p id="out"></p>
+  </div>
+
+  <script>
+    function getMsg() {
+      fetch('/api')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('out').innerText = data.message;
+        });
+    }
+  </script>
+</body>
+</html>

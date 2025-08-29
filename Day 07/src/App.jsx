@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>Day 07 – React State Magic ✨</h1>
+      <h1>Day 07 – React State Magic </h1>
 
       <div className="counter-display">{count}</div>
       <button onClick={() => setCount(count + 1)}>➕ Add</button>

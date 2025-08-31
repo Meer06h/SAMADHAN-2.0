@@ -1,6 +1,8 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 let students = [
@@ -19,6 +21,10 @@ app.post('/students', (req, res) => {
   res.status(201).json(newStudent);
 });
 
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
+app.get('/', (req, res) => {
+  res.redirect('/students');
+});
+
+app.listen(5000, () => {
+  console.log('Server running at: http://localhost:5000/students');
 });

@@ -3,8 +3,8 @@ const app = express();
 const PORT = 5000;
 app.use(express.json());
 let studentList = [
-  { id: 1, name: "Meer", age: 21 },
-  { id: 2, name: "Nikhil", age: 22 }
+  { id: 1, name: "Meer", age: 20 },
+  { id: 2, name: "Ameen", age: 21 }
 ];
 
 app.get("/students", (req, res) => res.json(studentList));
